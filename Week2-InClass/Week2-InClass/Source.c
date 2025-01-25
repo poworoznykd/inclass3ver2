@@ -11,10 +11,12 @@ double calculateArea(double radius); // Student 4
 unsigned long factorial(int n); // Student 5
 void displayMenu(void);             // Student 6
 
+
 int main(void) {
     // Variable declarations
     int choice = 5;
     char input[100]; // For safer input handling
+    unsigned long (*funcPtr)(int, int);
 
     // Display a welcome message
     printf("Welcome to the Collaborative Code Management Program!\n");
@@ -39,8 +41,11 @@ int main(void) {
         break;
     case 3:
         // Call subtract function (placeholder)
-        unsigned long (*funcPtr)(int, int);
-
+        
+        //
+        // Reference from the SENG1070 course material
+        // Declare a function pointer
+        
         // Assign the address of exampleFunction to the function pointer
         funcPtr = factorial;
 
@@ -56,13 +61,15 @@ int main(void) {
         break;
     case 5:
         // Call factorial function (placeholder)
-        unsigned long (*funcPtr)(int, int);
+        printf("This is only test");
+        //
 
+        unsigned long (*funcPtr)(int, int);
         // Assign the address of exampleFunction to the function pointer
         funcPtr = factorial;
 
         // Use the function pointer to call the function 
-        int result = funcPtr(5, 4);
+        result = funcPtr(5, 4);
 
         printf("result:%ld\n", result);
         //printf("result:%ld\n", 5*4*3*2*1);
